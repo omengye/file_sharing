@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Show Files</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link href="/static/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="header">
+    <a href="/">Share Files</a><br>
+    <button type="button" class="btn btn-default">
+        <a href="/file">Upload File</a>
+    </button>
+</div>
+<div class="archive">
+    {% if detail %}
+    <div class="detail">
+        {{detail}}<br>
+    </div>
+    {% end %}
+    {% for file in files %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{file.file_title}}</h3>
+        </div>
+        <div class="panel-body">
+            {{ locale.format_date(file.published, full_format=True, shorter=True) }}<br>
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" value="http://uploadsomefiles.qiniudn.com/{{file.file_name}}">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <a href="http://uploadsomefiles.qiniudn.com/{{file.file_name}}">下载</a>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    {% end %}
+    {% if page %}
+    <div class="page">
+        <ul class="pagination">
+        {% if previous %}
+            <li><a href="/?p={{ previous }}">&laquo;</a></li>
+            <li><a href="/?p={{ previous }}">{{ previous }}</a></li>
+        {% end %}
+        <li><a href="/?p={{ page }}" style="color:black">{{ page }}</a></li>
+        {% if next %}
+            <li><a href="/?p={{ next }}">{{ next }}</a></li>
+            <li><a href="/?p={{ next }}">&raquo;</a></li>
+        {% end %}
+        </ul>
+    </div>
+    {% end %}
+</div>
+</body>
+</html>

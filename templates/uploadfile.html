@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Upload file</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link href="/static/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div>
+    <div class="header">
+        <a href="/">Share Files</a>
+    </div>
+    <div class="upfile">
+        <form action="{{ request.uri }}" enctype="multipart/form-data" method='post'>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <input type='file' name='file' />
+                </div>
+                <div class="panel-body">
+                    <input type="text" class="form-control" name="file_title" placeholder="文件标题" /><br>
+                    <input type='submit' value='上传'/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

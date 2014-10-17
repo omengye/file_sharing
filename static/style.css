@@ -1,0 +1,45 @@
+body, html {
+color:#404040;
+}
+
+
+.header {
+display:block;
+width:600px;
+margin:0 auto;
+font-size:30px;
+padding:0 0 20px 0;
+text-align:center;
+<!--border-style: solid;-->
+<!--border-color: black;-->
+}
+
+.archive {
+display:block;
+width:600px;
+margin:0 auto;
+padding:0 20px;
+margin-bottom:30px;
+border-bottom:1px solid #efefef;
+padding-bottom:10px;
+<!--border-style: solid;-->
+<!--border-color: black;-->
+}
+
+
+.upfile {
+display:block;
+width:600px;
+margin:0 auto;
+padding:0 20px;
+margin-bottom:30px;
+border-bottom:1px solid #efefef;
+padding-bottom:10px;
+text-align:center;
+<!--border-style: solid;-->
+<!--border-color: black;-->
+}
+
+.page {
+text-align:center;
+}
